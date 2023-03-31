@@ -16,7 +16,7 @@ def callback(message):
     requests.post(webhook_url, data=message.data)
     message.ack()
 
-@app.route('/', methods=['POST'])
+@app.route('/hook', methods=['POST'])
 def handle_message():
     """Handle incoming HTTP POST request."""
     message_data = request.get_data()
